@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'UserProfilePage.dart';
+
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
 
@@ -11,6 +13,7 @@ class Welcome extends StatefulWidget {
 
 class _WelcomeState extends State<Welcome> {
   int _selectedIndex = 0;
+   late String currentUserId;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -35,13 +38,22 @@ class _WelcomeState extends State<Welcome> {
   }
 
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('MIAGED'),
       ),
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: FlatButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => UserProfilePage(userId: currentUserId),
+              ),
+            );
+          },
+          child: Text("Go to user profile page"),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -64,4 +76,10 @@ class _WelcomeState extends State<Welcome> {
       ),
     );
   }
+  
+  // ignore: non_constant_identifier_names
+  FlatButton({required Null Function() onPressed, required Text child}) {}
 }
+
+
+

@@ -19,11 +19,11 @@ class _WelcomeState extends State<Welcome> {
       style: optionStyle,
     ),
     Text(
-      'Business',
+      'cart',
       style: optionStyle,
     ),
     Text(
-      'School',
+      'Profile',
       style: optionStyle,
     ),
   ];
@@ -40,10 +40,8 @@ class _WelcomeState extends State<Welcome> {
       appBar: AppBar(
         title: const Text('MIAGED'),
       ),
-      
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
-        
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

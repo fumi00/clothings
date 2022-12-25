@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "clothings",
+            "cwd": "smail\\clothings",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "clothings (profile mode)",
+            "cwd": "smail\\clothings",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "clothings (release mode)",
+            "cwd": "smail\\clothings",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:clothings/screens/signup.dart';
 import 'package:clothings/screens/welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -15,7 +16,7 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Sample App';
+  static const String _title = 'MIAGED';
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
                 child: const Text(
-                  'TutorialKart',
+                  'Welcome',
                   style: TextStyle(
                       color: Colors.blue,
                       fontWeight: FontWeight.w500,
@@ -70,7 +71,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 controller: emailController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'E-mail',
+                  labelText: 'Login',
                 ),
               ),
             ),
@@ -98,7 +99,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
                   onPressed: signIn,
-                  child: const Text('Login'),
+                  child: const Text('Se connecter'),
                 )),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +107,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 const Text('Does not have account?'),
                 TextButton(
                   child: const Text(
-                    'Sign in',
+                    'Sign up',
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
@@ -118,6 +119,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ],
         ));
   }
+
   Future signIn() async {
     final User? user = (await _auth.signInWithEmailAndPassword(
             email: emailController.text, password: passwordController.text))
